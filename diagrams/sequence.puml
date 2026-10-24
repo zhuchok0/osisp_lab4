@@ -1,0 +1,21 @@
+@startuml
+actor Reader
+actor Writer
+participant "g_readTry"  as RT
+participant "g_rmutex"   as RM
+participant "g_wmutex"   as WM
+participant "g_resource" as R
+
+Reader -> RT: wait
+Writer -> WM: lock
+Writer -> WM: writeCount++
+Writer -> RT: wait   (блокирует новых читателей)
+Writer -> WM: unlock
+Writer -> R : wait
+Writer -> R : acquire
+Writer -> R : release
+Writer -> WM: lock
+Writer -> WM: writeCount--
+Writer -> RT: release
+Writer -> WM: unlock
+@enduml
