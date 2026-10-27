@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Parse lab10 output files (3R/2W and 3R/5W) and build charts."""
 import re
 import csv
