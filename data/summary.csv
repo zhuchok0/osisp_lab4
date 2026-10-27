@@ -1,0 +1,7 @@
+config,run,writers_n,total_ms,readers_ops,readers_avg,readers_max,readers_to,writers_ops,writers_avg,writers_max,writers_to,violations
+3R/2W,run_3r2w_1,2,3801,60,126,2554,0,40,63,123,0,0
+3R/2W,run_3r2w_2,2,3791,60,126,2541,0,40,63,113,0,0
+3R/2W,run_3r2w_3,2,3798,60,126,2550,0,40,63,121,0,0
+3R/5W,run_3r5w_1,5,7473,57,66,1277,3,100,245,311,0,0
+3R/5W,run_3r5w_2,5,7481,57,66,1295,3,100,246,310,0,0
+3R/5W,run_3r5w_3,5,7473,57,65,1279,3,100,245,310,0,0

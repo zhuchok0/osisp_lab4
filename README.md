@@ -23,5 +23,25 @@ OPERATIONS = BASE_OPERATIONS + STUDENT_ID * 5
 Windows 10/11, MSVC 2019+ (Developer PowerShell for VS 2022), C++17.
 
 ## Сборка
+    cl /nologo /std:c++17 /EHsc /O2 /W3 /DNOMINMAX /Fe:build\main.exe /Fo:build\ src\main.cpp
 
 ## Запуск
+    .\build\main.exe --readers 3 --writers 2 --ops 20 --log events_3r2w.log
+    .\build\main.exe --readers 3 --writers 5 --ops 20 --log events_3r5w.log
+    .\build\main.exe --readers 3 --writers 5 --ops 20 --quiet
+
+## Тесты
+    .\tests\run_tests.ps1
+    .\tests\check_invariants.ps1
+
+![Общее время выполнения](data/plot_total_time.png)
+
+*Рисунок 1 — Зависимость общего времени выполнения от числа писателей.*
+
+![Время ожидания по категориям](data/plot_wait_time.png)
+
+*Рисунок 2 — Среднее время ожидания читателей и писателей.*
+
+![Тайм-ауты по категориям](data/plot_timeouts.png)
+
+*Рисунок 3 — Среднее число тайм-аутов по категориям участников.*
